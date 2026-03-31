@@ -21,9 +21,9 @@ StockSeer is a web application that predicts short-term stock price movements us
 
 ## Screenshot 🖼️
 
-![StockSeer Screenshot](screenshots/img1.png)  
-![StockSeer AI Prediction Screenshot](screenshots/img2.png)
-![StockSeer AI Prediction Screenshot](screenshots/img3.png)
+![StockSeer Screenshot](screenshot/img1.png)  
+![StockSeer AI Prediction Screenshot](screenshot/img2.png)
+![StockSeer AI Prediction Screenshot](screenshot/img3.png)
 
 ---
 
