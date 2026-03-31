@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StockSeer — AI Price Predictor</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ===== HEADER ===== -->
+    <header>
+      <p class="logo">Market Intelligence</p>
+      <h1>Stock<span>Seer</span></h1>
+      <p class="subtitle">
+        AI-powered price movement prediction using real market data
+      </p>
+    </header>
+
+    <!-- ===== SEARCH BAR ===== -->
+    <div class="search-area">
+      <div class="search-box">
+        <input
+          id="tickerInput"
+          type="text"
+          placeholder="AAPL, TSLA, MSFT..."
+          maxlength="10"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button id="fetchBtn">ANALYZE →</button>
+      </div>
+    </div>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main>
+      <!-- Loading Spinner -->
+      <div id="spinner" style="display: none">
+        <div class="spinner-ring"></div>
+        <span class="spinner-label" id="spinnerLabel">FETCHING DATA...</span>
+      </div>
+
+      <!-- Error Display -->
+      <div id="errorBox" style="display: none; color: red"></div>
+
+      <!-- Stock Data Card -->
+      <div id="stockCard" style="display: none">
+        <div class="card-header">
+          <div class="ticker-name">
+            <h2 id="dispTicker"></h2>
+            <p id="dispTimestamp"></p>
+          </div>
+          <div class="price-block">
+            <div class="price" id="dispPrice"></div>
+            <div class="change" id="dispChange"></div>
+          </div>
+        </div>
+        <div class="stats-grid">
+          <div class="stat">
+            <div class="stat-label">Open</div>
+            <div class="stat-value" id="dispOpen"></div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">High</div>
+            <div class="stat-value" id="dispHigh"></div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Low</div>
+            <div class="stat-value" id="dispLow"></div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Prev Close</div>
+            <div class="stat-value" id="dispPrevClose"></div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Volume</div>
+            <div class="stat-value" id="dispVolume"></div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Change %</div>
+            <div class="stat-value" id="dispChangePct"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Prediction Card -->
+      <div id="predictionCard" style="display: none">
+        <div class="pred-header">◈ AI ANALYSIS — Gemini</div>
+        <div class="pred-body">
+          <div class="verdict">
+            <div class="verdict-arrow" id="predArrow"></div>
+            <div class="verdict-badge" id="predBadge"></div>
+            <div style="flex: 1; min-width: 180px">
+              <div class="confidence-bar-wrap">
+                <div class="confidence-label">
+                  <span>Confidence</span>
+                  <span id="predConfidencePct"></span>
+                </div>
+                <div class="confidence-bar">
+                  <div class="confidence-fill" id="predConfidenceFill"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pred-reasoning" id="predReasoning"></div>
+        </div>
+      </div>
+    </main>
+
+    <!-- External JavaScript -->
+    <script src="app.js"></script>
+  </body>
+</html>
